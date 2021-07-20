@@ -8,6 +8,7 @@ from django.shortcuts import render, redirect, resolve_url
 from django.views.generic import DetailView, UpdateView 
 
 from .forms import UserForm
+from .mixins import OnlyYouMixin
 
 
 
@@ -57,7 +58,7 @@ class UserDetailView(DetailView):
     model = User
     template_name = "kanban/users/detail.html"
     
-class UserUpdateView(UpdateView):
+class UserUpdateView(OnlyYouMixin, UpdateView):
     model = User
     template_name = "kanban/users/update.html"
     form_class = UserForm

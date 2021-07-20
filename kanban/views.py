@@ -4,6 +4,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect 
 from django.views.generic import DetailView
+from django.shortcuts import render, redirect, resolve_url 
+from django.views.generic import DetailView, UpdateView 
 
 
 def index(request):
@@ -51,3 +53,11 @@ def signup(request):
 class UserDetailView(DetailView):
     model = User
     template_name = "kanban/users/detail.html"
+    
+class UserUpdateView(UpdateView):
+    model = User
+    template_name = "kanban/users/update.html"
+    form_class = UserForm
+
+    def get_success_url(self):
+        return resolve_url('kanban:users_detail', pk=self.kwargs['pk'])

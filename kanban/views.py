@@ -7,6 +7,9 @@ from django.views.generic import DetailView
 from django.shortcuts import render, redirect, resolve_url 
 from django.views.generic import DetailView, UpdateView 
 
+from .forms import UserForm
+
+
 
 def index(request):
     return render(request, "kanban/index.html")

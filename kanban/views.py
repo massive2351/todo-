@@ -66,3 +66,4 @@ class UserUpdateView(OnlyYouMixin, UpdateView):
 
     def get_success_url(self):
         return resolve_url('kanban:users_detail', pk=self.kwargs['pk'])
+        

@@ -13,3 +13,6 @@ urlpatterns = [
     path("users/<int:pk>/update/", views.UserUpdateView.as_view(), name="users_update"),
     path("lists/create/", views.ListCreateView.as_view(), name="lists_create"), 
 ]
+
+
+

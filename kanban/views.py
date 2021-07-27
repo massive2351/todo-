@@ -5,13 +5,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect 
 from django.urls import reverse_lazy
-from django.views.generic import DetailView
+from django.views.generic import DetailView, UpdateView, CreateView
 from django.shortcuts import render, redirect, resolve_url 
 from django.views.generic import DetailView, UpdateView 
 
 from .forms import UserForm, ListForm
 from . models import List
-from .forms import UserForm
 from .mixins import OnlyYouMixin
 
 

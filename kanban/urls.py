@@ -18,3 +18,5 @@ urlpatterns = [
     path("lists/create/", views.ListCreateView.as_view(), name="lists_create"), 
     
 ]
+
+

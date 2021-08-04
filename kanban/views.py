@@ -80,3 +80,7 @@ class ListCreateView(LoginRequiredMixin, CreateView):
 class ListListView(LoginRequiredMixin, ListView):
     model = List
     template_name = "kanban/lists/list.html"
+    
+class ListDetailView(LoginRequiredMixin, DetailView):
+    model = List
+    template_name = "kanban/lists/detail.html"

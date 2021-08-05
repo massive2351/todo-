@@ -93,3 +93,7 @@ class ListUpdateView(LoginRequiredMixin, UpdateView):
     def get_success_url(self):
         return resolve_url('kanban:lists_detail', pk=self.kwargs['pk'])
 
+class ListDeleteView(LoginRequiredMixin, DeleteView):
+    model = List
+    template_name = "kanban/lists/delete.html"
+    success_url = reverse_lazy("kanban:lists_list")

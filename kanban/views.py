@@ -13,6 +13,7 @@ from .mixins import OnlyYouMixin
 
 
 
+
 def index(request):
     return render(request, "kanban/index.html")
     
